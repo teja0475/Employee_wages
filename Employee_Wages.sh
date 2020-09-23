@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "Welcome to employee wage computation program"
-read -p "Max working days(value be >=20): " max_days
 
 full_time=2
 half_time=1
@@ -10,8 +9,9 @@ rate_per_hour=20
 full_time_hours=8
 half_time_hours=4
 total_working_days=0
-total_emp_hour=0
+total_emp_hours=0
 emp_working_days=20
+Day=0
 
 function empWorkHour()
 {
@@ -35,7 +35,7 @@ function dailyEmpWage()
 }
 
 
-while (( $total_working_days <= $max_days ))
+while (( $total_working_days < 20 && $total_emp_hours < 100 ))
 do
 
 	((total_working_days++))
@@ -59,8 +59,8 @@ do
 
 
 
-
-echo "$emp_daily_wage---------->$monthly_emp_wage"
+((Day++))
+echo "$Day---------->$emp_daily_wage---------->$monthly_emp_wage"
 
 done
 
